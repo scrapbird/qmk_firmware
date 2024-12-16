@@ -35,3 +35,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define LEADER_PER_KEY_TIMING
 #define LEADER_TIMEOUT 250
+
+#define USB_POLLING_INTERVAL_MS 10
