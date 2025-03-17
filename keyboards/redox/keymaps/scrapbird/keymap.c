@@ -1,5 +1,12 @@
 #include QMK_KEYBOARD_H
 
+/*
+qmk compile -kb redox -km scrapbird
+
+QMK Toolbox:
+ATmega32U4
+*/
+
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
@@ -52,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┐       ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT ,KC_Z    ,KC_X    ,KC_C    ,KC_V    ,KC_B    ,KC_N    ,KC_7,            QK_LEAD ,KC_ADEN ,KC_N    ,KC_M    ,KC_COMM ,KC_DOT  ,KC_SLSH ,KC_RSFT ,
   //├────────┼────────┼────────┼────────┼────┬───┴────┬───┼────────┼────────┤       ├────────┼────────┼───┬────┴───┬────┼────────┼────────┼────────┼────────┤
-     XXXXXXX ,KC_PPLS ,KC_PMNS ,KC_LALT ,     KC_SPC  ,    KC_LCTL ,KC_H,            KC_ENT  ,KC_SPC  ,    KC_RALT ,     KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT 
+     KC_LCTL ,KC_PPLS ,KC_PMNS ,KC_LALT ,     KC_SPC  ,    KC_G    ,KC_H,            KC_ENT  ,KC_SPC  ,    KC_RALT ,     KC_LEFT ,KC_DOWN ,KC_UP   ,KC_RGHT 
   //└────────┴────────┴────────┴────────┘    └────────┘   └────────┴────────┘       └────────┴────────┘   └────────┘    └────────┴────────┴────────┴────────┘
   ),
 
@@ -118,7 +125,7 @@ void leader_end_user(void) {
       SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_4));
    }
 
-   if (leader_sequence_one_key(KC_Q)) {
+   if (leader_sequence_one_key(KC_Q)) { // Rust layer
       if (IS_LAYER_OFF(_RUST)) {
          layer_on(_RUST);
       } else {
@@ -126,8 +133,24 @@ void leader_end_user(void) {
       }
    }
 
-   if (leader_sequence_one_key(KC_P)) {
+   if (leader_sequence_one_key(KC_P)) { // Paste in terminal
       SEND_STRING(SS_DOWN(X_LEFT_SHIFT) SS_DELAY(100) SS_TAP(X_INS) SS_DELAY(100) SS_UP(X_LEFT_SHIFT));
+   }
+
+   // Generic macro pad binds
+   if (leader_sequence_one_key(KC_Z)) {
+      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_1));
+   }
+   if (leader_sequence_one_key(KC_X)) {
+      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_2));
+   }
+   if (leader_sequence_one_key(KC_C)) {
+      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_3));
+   }
+   if (leader_sequence_one_key(KC_V)) {
+      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_4));
+   }
+   if (leader_sequence_one_key(KC_B)) {
    }
 
     /* SEQ_TWO_KEYS(KC_D, KC_D) { */
