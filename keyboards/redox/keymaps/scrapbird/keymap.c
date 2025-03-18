@@ -139,16 +139,16 @@ void leader_end_user(void) {
 
    // Generic macro pad binds
    if (leader_sequence_one_key(KC_Z)) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_1));
+      SEND_STRING(SS_TAP(X_RIGHT_CTRL) SS_DELAY(100) SS_TAP(X_RIGHT_CTRL) SS_TAP(X_KP_1));
    }
    if (leader_sequence_one_key(KC_X)) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_2));
+      SEND_STRING(SS_TAP(X_RIGHT_CTRL) SS_DELAY(100) SS_TAP(X_RIGHT_CTRL) SS_TAP(X_KP_2));
    }
    if (leader_sequence_one_key(KC_C)) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_3));
+      SEND_STRING(SS_TAP(X_RIGHT_CTRL) SS_DELAY(100) SS_TAP(X_RIGHT_CTRL) SS_TAP(X_KP_3));
    }
    if (leader_sequence_one_key(KC_V)) {
-      SEND_STRING(SS_TAP(X_SCRL) SS_DELAY(100) SS_TAP(X_SCRL) SS_TAP(X_KP_4));
+      SEND_STRING(SS_TAP(X_RIGHT_CTRL) SS_DELAY(100) SS_TAP(X_RIGHT_CTRL) SS_TAP(X_KP_4));
    }
    if (leader_sequence_one_key(KC_B)) {
    }
